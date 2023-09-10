@@ -35,9 +35,7 @@ const AppProvider = ({ children }) => {
       // //(prev)=>[...prev, ...alldata]
 
       meta.push(...alldata);
-      dispatch({ type: "APPDATA", payload: meta });
-
-      console.log(meta);
+      dispatch({ type: "APPDATA", payload: meta });  
     } catch (error) {
       dispatch({ type: "ERROR" });
     }

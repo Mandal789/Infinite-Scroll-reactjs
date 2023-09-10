@@ -2,21 +2,30 @@
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin: 50px 50px;
+    margin: 0;
+    justify-content: space-around;
 }
 
 .item {
     border: 1px solid gray;
     display: flex;
     flex-direction: column;
-    width: 16%;
+    width: min-content;
     height: 20%;
+}
+
+.input-container {
+    /* marginLeft: "30%", display: "flex", gap:'50px',flexWrap:'wrap' */
+    margin-left: 30%;
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
 }
 
 .input-box {
     background: gray;
     color: white;
-    width: 50%;
+    width: auto;
     margin-top: 50px;
     padding: 1rem 10px;
 }
@@ -89,5 +98,17 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (min-width: 768px) {
+    .input-box {
+        width: 50%;
+    }
+    .input-container {
+        gap: 50px;
+    }
+    .item_container {
+        margin: 50px 50px;
     }
 }
