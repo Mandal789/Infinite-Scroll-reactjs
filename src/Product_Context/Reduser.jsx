@@ -9,7 +9,7 @@ const Reduser = (state, action) => {
       return {
         ...state,
         isLoading: false,
-        filter_product:action.payload,
+        filter_product: action.payload,
         Products: action.payload,
       };
     case "ERROR":
@@ -37,9 +37,9 @@ const Reduser = (state, action) => {
 
       if (text) {
         tempFilterProduct = tempFilterProduct.filter((curElem) => {
-          return curElem.title.toLowerCase().includes(text);
+          return curElem.title.toLowerCase().includes(text.toLowerCase());
         });
-      } 
+      }
       return {
         ...state,
         filter_product: tempFilterProduct,

@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+.item_container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 50px 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.item {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    width: 16%;
+    height: 20%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-box {
+    background: gray;
+    color: white;
+    width: 50%;
+    margin-top: 50px;
+    padding: 1rem 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+::placeholder {
+    color: white;
+    margin-left: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* .loader {
+    margin: auto;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+    }
+    25% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+    }
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+    }
+    75% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+    }
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+    }
+} */
+
+.loader {
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

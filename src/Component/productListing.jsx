@@ -1,46 +1,53 @@
-import React, { Fragment } from "react";
+import React from "react";
+import '../App.css';
+//import App from "../App";
 import { useProductContext } from "../Product_Context/Context_Api";
 const ProductListing = () => {
   const {
     filters: { text },
     filter_product,
     updateFilterValue,
+
   } = useProductContext();
+
+
+
+  
+
   return (
     <>
-      <div style={{ marginLeft: "30%" }}>
+      <div style={{ marginLeft: "30%" ,display:'flex' ,gap:'50px'}}>
         <input
           type="text"
           name="text"
-          placeholder="Search"
+          placeholder="Search By Title"
           value={text}
           onChange={updateFilterValue}
-          style={{ width: "50%", marginTop: "50px", padding: "1rem 0" }}
+          className="input-box"
+        
         />
+        <p style={{marginTop:'60px',textTransform:'capitalize'}}>total length of Data : 5000</p>
       </div>
-      <div>
-        <div
-          style={{
-            display: "flex",
-            gap: "5px",
-            color: "black",
-            flexDirection: "column",
-            marginLeft: "100px",
-            marginTop: "50px",
-          }}
-        >
+      
+        <div className="item_container">
           {filter_product.map((item) => {
             return (
-              <div key={item.id} style={{ display: "flex", gap: "150px" }}>
+              <div key={item.id} className="item">
+                <img src={item.thumbnailUrl} alt="" width={200} height={127} />
+                
+                <p style={{margin:'0'}}>{item.title}</p>
+                <div style={{display:'flex',gap:'150px',width:'10%'}}>
                 <p>{item.albumId}</p>
                 <p>{item.id}</p>
-                <p>{item.title}</p>
-                <img src={item.url} alt="" width={80} />
+                </div>
+                
+                
+                
               </div>
             );
           })}
         </div>
-      </div>
+      
     </>
   );
 };
